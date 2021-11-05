@@ -1,0 +1,63 @@
+[user]
+	name = <your full name> 
+  email = <your email>
+[github]
+  user = <github username>
+[core]
+  excludesfile = /Users/<mac username>/.gitignore_global
+  pager = delta --theme='Dracula'
+  editor = vi
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  features = side-by-side line-numbers decorations
+[alias]
+  a   = add
+  aa  = add -A :/
+  ap  = add -p
+  b   = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+  bd  = branch -D
+  bn  = checkout -b
+  c   = commit
+  caa = commit -a --amend
+  cm  = commit -v -m
+  d   = diff
+  f   = fetch
+  h   = log --pretty=format:'%h %ad | %s [%an]' --graph --date=short
+  l   = pull
+  o   = checkout
+  m   = merge
+  mf  = merge --ff-only
+  p   = push -u
+  poh = push -u origin head
+  s   = stash
+  ra  = remote add
+  rb  = rebase
+  rbc = rebase --continue
+  rbi = rebase -i
+  rr  = remote rm
+  rs  = remote -v show
+  rt  = restore
+  rv  = revert
+  sa  = stash apply
+  sh  = show
+  st  = status
+  sw  = switch
+  ctags = !.git/hooks/ctags
+[apply]
+  whitespace = fix
+[push]
+  default = tracking
+[pull]
+  default = tracking
+  rebase = true
+[init]
+  templatedir = ~/.git_template
+  defaultBranch = main
+[help]
+  autocorrect = 20
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
