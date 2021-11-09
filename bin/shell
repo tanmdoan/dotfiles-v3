@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+    if ! [[ -d ~/.config/starship.toml ]]; then
+        ln -s $(shell pwd)/../starship.toml ~/.config/starship.toml
+    fi
+
+    /usr/local/opt/fzf/install

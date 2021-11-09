@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+    if ! [[ -d ~/.asdf/plugins/nodejs ]]; then
+        asdf plugin add nodejs
+    fi
+
+    if ! [[ -d ~/.asdf/plugins/go ]]; then
+        asdf plugin add go
+    fi
+
+    ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+    asdf install 

@@ -22,15 +22,16 @@ symlink: echo.symlink
 packages: echo.packages
 	brew bundle
 
-shell: echo.shell # remove this if you're on a new laptop and don't need to switch from bash to zsh
-	/usr/local/opt/fzf/install
-
+shell: echo.shell
+	bin/shell
+	
 languages: echo.languages
-	asdf install
+	bin/languages
 
-# macos only <delete the example below> 
 other: echo.other
 	@if [ "$(uname)" == "Darwin" ]; then \
 	defaults write com.apple.screencapture location ~/Downloads;killall SystemUIServer ;\
-  defaults write com.apple.finder AppleShowAllFiles TRUE;killall Finder ;\
+	defaults write com.apple.finder AppleShowAllFiles TRUE;killall Finder ;\
 	fi
+	rm -rf ~/.config/karabiner/karabiner.json ;\
+	ln -s $(shell pwd)/karabiner.json ~/.config/karabiner/karabiner.json

@@ -3,7 +3,7 @@ tap "github/gh"
 cask_args appdir: "/Applications"
 
 brew "asdf"
-brew "awscli@1"
+brew "awscli@2"
 brew "autojump"
 brew "bat"
 brew "brew-cask-completion"
@@ -21,9 +21,9 @@ brew "zsh"
 brew "zsh-completions"
 
 cask "docker"
-# cask "cask-fonts/font-fira-code"
+cask "cask-fonts/font-fira-code"
 cask "github"
 cask "visual-studio-code"
 
 mas "CopyClip", id: 595191960
-# mas "Xcode", id: 497799835
+# mas "Xcode", id: 497799835 # requires update on new machine to latest id
